@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  target_value: 9.99
+  end_date: 2020-08-30 17:29:42
+
+two:
+  title: MyString
+  description: MyText
+  target_value: 9.99
+  end_date: 2020-08-30 17:29:42
