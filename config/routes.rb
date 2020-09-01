@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   unauthenticated :user do
     root to: "pages#index"
+    resources :pages, only: [:index, :show]
   end
 end

@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <h2>
+      <%= @project.title %>
+    </h2>
+    <h6>
+      <%= @project.user.name %>
+    </h6>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m6">
+      <%= image_tag rails_blob_path(@project.image_project), class: "responsive-img" %>
+    </div>
+
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-content">
+          <p>
+            valor arrecadado até o momento R$ 
+            <%= total_amount_collected(@project.supporters) %>
+          </p>
+          <p>
+            Meta R$ <%= @project.target_value %>
+          </p>
+          <p>
+            Este projeto pode ser apoiado ate o dia 
+            <%= @project.end_date.strftime("%d-%m-%Y") %>
+          </p>
+        </div>
+        <div class="card-action center">
+          <a class="green btn-large">Apoiar este projeto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m6">
+      <p>
+        <%= @project.description %>
+      </p>
+    </div>
+          
+    <h5 class="card-title">Apoiadores deste projeto</h5>
+    <% @project.supporters.each do |supporter| %>
+      <div class="col s12 m2">
+        <div class="card">
+          <div class="card-content">
+            <span><%= supporter.user.name %></span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
