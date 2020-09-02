@@ -1,0 +1,35 @@
+<div class="container">
+  <h5> Meus Projetos </h5>
+  <div class="row">
+    <% @projects.each do |project| %>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag rails_blob_path(project.image_project) %>
+          </div>
+          <div class="card-content">
+            <span class="card-title">
+              <a href="/projects/<%= project.id %>">
+                <%= project.title %>
+              </a>
+            </span>
+            <span>
+              <%= project.user.name %>
+            </span>
+            <p>
+              <%= truncate(project.description, length: 25) %>
+            </p>
+          </div>
+          <div class="card-action">
+            <p>
+              <%= project.target_value %>
+            </p>
+            <p>
+              <%= project.end_date.strftime("%d-%m-%Y") %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
