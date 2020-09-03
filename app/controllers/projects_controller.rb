@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_projetc, only: [:show, :destroy]
+  before_action :set_projetc, only: [:show, :destroy, :edit, :update]
 
   def index
     @projects = current_user.projects
@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
-      flash[:notice] = "Contact succesfully created"
+      flash[:notice] = "Projeto criado com sucesso!"
       redirect_to projects_path
     else
       render :new
@@ -25,10 +25,17 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    if @project.update(project_params)
+      flash[:notice] = "Projeto atualizado com sucesso!"
+      redirect_to projects_path
+    else
+      render :edit
+    end
   end
 
   def destroy
     @project.destroy
+    redirect_to projects_path
   end
 
   private
