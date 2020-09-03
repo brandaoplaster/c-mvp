@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_projetc, only: [:show]
+  before_action :set_projetc, only: [:show, :destroy]
 
   def index
     @projects = current_user.projects
@@ -28,6 +28,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    @project.destroy
   end
 
   private
@@ -37,6 +38,6 @@ class ProjectsController < ApplicationController
   end
 
   def set_projetc
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find(params[:id])
   end
 end

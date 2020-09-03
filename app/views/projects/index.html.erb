@@ -21,14 +21,15 @@
             <p>
               <%= truncate(project.description, length: 25) %>
             </p>
-          </div>
-          <div class="card-action">
             <p>
               <%= project.target_value %>
             </p>
             <p>
               <%= project.end_date.strftime("%d-%m-%Y") %>
             </p>
+          </div>
+          <div class="card-action">
+            <%= link_to 'Delete',url_for(action: :destroy, id: project.id),method: :delete, data: {confirm: "Are you sure?"} %>
           </div>
         </div>
       </div>
