@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   authenticated :user do
     root to: "projects#index", as: :authenticated_root
     resources :projects
+    resources :supporters
   end
 
   unauthenticated :user do
