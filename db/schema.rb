@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_08_30_234852) do
   create_table "supporters", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "project_id"
-    t.decimal "value", precision: 5, scale: 2
+    t.decimal "donated_amount", precision: 5, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_supporters_on_project_id"

@@ -1,7 +1,7 @@
 class SupportersController < ApplicationController
 
-  def supporter_project
-    @supporter = Supporter.new(suppoter_params)
+  def create
+    @supporter = Supporter.new(supporter_params)
 
     if @supporter.save
       flash[:notice] = "ok!"
@@ -13,7 +13,7 @@ class SupportersController < ApplicationController
 
   private
 
-    def suppoter_params
-      params.require(:supporter).permit(:value, :project_id).merge(user: current_user)
+    def supporter_params
+      params.require(:supporter).permit(:donated_amount, :project_id).merge(user: current_user)
     end
 end

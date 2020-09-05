@@ -17,5 +17,5 @@ project = Project.create(title: 'Revista em quadrinho', description: 'is simply 
 
 project.image_project.attach(io: File.open("#{images_dir}/project_1.jpg"), filename: 'project_1.jpg')
 
-Supporter.create(user: user2, project: project, value: 100.00 )
-Supporter.create(user: user3, project: project, value: 50.00 )
+Supporter.create(user: user2, project: project, donated_amount: 100.00 )
+Supporter.create(user: user3, project: project, donated_amount: 50.00 )

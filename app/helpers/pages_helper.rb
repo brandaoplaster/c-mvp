@@ -3,7 +3,7 @@ module PagesHelper
     total = 0
     if supporters
       supporters.each do |supporter|
-        total += supporter.value
+        total += supporter.donated_amount
       end
     end
     total

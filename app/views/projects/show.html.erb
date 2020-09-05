@@ -38,14 +38,12 @@
       <div class="card">
         <div class="card-content">
           <div class="row">
-            <%= form_with url: '/supporter-project', method: :get, id: 'form_supporter' do |f| %>
+            <%= form_for(Supporter.new) do |f| %>
               <div class="input-field col s12">
-                <%= f.text_field :value, autofocus: true,  id: 'target_value' %>
-                <%= f.label "Valor" %>
+                <%= f.text_field :donated_amount, autofocus: true %>
+                <%= f.label :donated_amount %>
               </div>
-              <div class="input-field">
-                <%= f.hidden_field :project_id, value: @project.id, id: 'target_project_id' %>
-              </div>
+              <%= f.hidden_field :project_id, value: @project.id %>
               <button class="btn waves-effect waves-light right" type="submit" name="action">
                 Apoiar este projeto
                 <i class="material-icons right">done</i>
