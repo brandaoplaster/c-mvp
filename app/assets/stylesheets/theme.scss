@@ -1,0 +1,10 @@
+@import "materialize/components/color-variables";
+
+$primary-color: #3f4752 !default;
+$primary-color-light: #f1f4f4 !default;
+$primary-color-dark: darken($primary-color, 15%) !default;
+ 
+$secondary-color: #4199de !default;
+$success-color: #7cc142 !default;
+$error-color: #ec4646 !default;
+$link-color: #4199de !default;
