@@ -23,11 +23,11 @@
             <%= total_amount_collected(@project.supporters) %>
           </p>
           <p>
-            Meta R$ <%= @project.target_value %>
+            Meta R$ <%= format_monetary_value(@project.target_value) %>
           </p>
           <p>
             Este projeto pode ser apoiado ate o dia 
-            <%= @project.end_date.strftime("%d-%m-%Y") %>
+            <%= formart_date(@project.end_date) %>
           </p>
         </div>
         <div class="card-action center">

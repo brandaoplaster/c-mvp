@@ -22,10 +22,10 @@
               <%= truncate(project.description, length: 25) %>
             </p>
             <p>
-              <%= project.target_value %>
+              <%= format_monetary_value(project.target_value) %>
             </p>
             <p>
-              <%= project.end_date.strftime("%d-%m-%Y") %>
+              <%= formart_date(project.end_date) %>
             </p>
           </div>
           <div class="card-action">

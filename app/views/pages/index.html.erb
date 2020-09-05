@@ -21,10 +21,10 @@
           </div>
           <div class="card-action">
             <p>
-              <%= project.target_value %>
+              <%= format_monetary_value(project.target_value) %>
             </p>
             <p>
-              <%= project.end_date %>
+              <%= formart_date(project.end_date) %>
             </p>
           </div>
         </div>
