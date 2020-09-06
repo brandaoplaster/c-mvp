@@ -67,21 +67,17 @@
   </div>
 
   <div class="row">
-    <div class="col s12 m6">
+    <div class="col s12 m12">
       <p>
         <%= @project.description %>
       </p>
     </div>
-          
-    <h5 class="card-title">Apoiadores deste projeto</h5>
-    <% @project.supporters.each do |supporter| %>
-      <div class="col s12 m2">
-        <div class="card blue-grey lighten-1">
-          <div class="card-content white-text center">
-            <span><%= supporter.user.name %></span>
-          </div>
-        </div>
+  </div>
+
+  <div class="row">
+    <h5 class="card-title center-align">Apoiadores deste projeto</h5>
+      <div class="col s12 m12">
+        <%= render_supporters(@project.supporters) %>
       </div>
-    <% end %>
   </div>
 </div>
