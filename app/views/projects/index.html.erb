@@ -5,7 +5,7 @@
       <div class="col s12 m4">
         <div class="card">
           <div class="card-image">
-            <% if project.image_project %>
+            <% if project.image_project.attached? %>
               <%= image_tag rails_blob_path(project.image_project), class: "image-project" %>
             <% end %>
           </div>

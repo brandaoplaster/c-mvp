@@ -10,7 +10,9 @@
 
   <div class="row">
     <div class="col s12 m6">
-      <%= image_tag rails_blob_path(@project.image_project), class: "responsive-img" %>
+      <% if @project.image_project.attached? %>
+        <%= image_tag rails_blob_path(@project.image_project), class: "responsive-img" %>
+      <% end %>
     </div>
 
     <div class="col s12 m6">
