@@ -3,6 +3,6 @@ $(function() {
     numberOfMonths: 3,
     showButtonPanel: true,
     minDate: new Date(),
-    dateFormat: "dd-mm-yyyy",
+    format: "dd-mm-yyyy",
   });
 });

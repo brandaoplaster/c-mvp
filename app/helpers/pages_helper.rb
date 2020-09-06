@@ -16,4 +16,9 @@ module PagesHelper
   def formart_date(date)
     date.strftime("%d/%m/%Y")
   end
+
+  def check_closing_date(date)
+    date_time = Time.new(date.year, date.month, date.day, 23, 59, 59)
+    date_time > Time.now ? true : false
+  end
 end

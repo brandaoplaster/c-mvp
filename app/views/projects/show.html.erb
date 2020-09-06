@@ -37,19 +37,27 @@
 
       <div class="card">
         <div class="card-content">
-          <div class="row">
-            <%= form_for(Supporter.new) do |f| %>
-              <div class="input-field col s12">
-                <%= f.text_field :donated_amount, class: "donated_amount" %>
-                <%= f.label :donated_amount %>
-              </div>
-              <%= f.hidden_field :project_id, value: @project.id %>
-              <button class="btn waves-effect waves-light right" type="submit" name="action">
-                Apoiar este projeto
-                <i class="material-icons right">done</i>
-              </button>
-            <% end %>
-          </div>
+          <% if check_closing_date(@project.end_date) %>
+            <div class="row">
+              <%= form_for(Supporter.new) do |f| %>
+                <div class="input-field col s12">
+                  <%= f.text_field :donated_amount, class: "donated_amount" %>
+                  <%= f.label :donated_amount %>
+                </div>
+                <%= f.hidden_field :project_id, value: @project.id %>
+                <button class="btn waves-effect waves-light right" type="submit" name="action">
+                  Apoiar este projeto
+                  <i class="material-icons right">done</i>
+                </button>
+              <% end %>
+            </div>
+          <% else %>
+            <div class="row">
+              <p class="flow-text center-align">
+                Este projeto alcanço a data limite
+              </p>
+            </div>
+          <% end %>
         </div>
       </div>
 
