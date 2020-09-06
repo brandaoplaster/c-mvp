@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :user
-  has_many :supporters
+  has_many :supporters, :dependent => :destroy
 
   validates :title, :description, :target_value, :image_project, presence: true
   validates :description, length: { maximum: 512 }
