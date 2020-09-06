@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="row">
-    <%= render "search" %>
+    <%= render "search/form" %>
   </div>
 
   <div class="row">
@@ -21,7 +21,7 @@
               <%= project.user.name %>
             </span>
             <p>
-              <%= project.description %>
+              <%= truncate(project.description, length: 25) %>
             </p>
           </div>
           <div class="card-action">

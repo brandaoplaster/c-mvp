@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get :search, to: "search#index"
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   authenticated :user do
@@ -9,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   unauthenticated :user do
+    get :search, to: "search#index"
     root to: "pages#index"
     resources :pages, only: [:index, :show]
   end
