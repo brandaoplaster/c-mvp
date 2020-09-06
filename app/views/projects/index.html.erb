@@ -6,7 +6,7 @@
         <div class="card">
           <div class="card-image">
             <% if project.image_project %>
-              <%= image_tag rails_blob_path(project.image_project) %>
+              <%= image_tag rails_blob_path(project.image_project), class: "image-project" %>
             <% end %>
           </div>
           <div class="card-content">
@@ -16,7 +16,7 @@
               </a>
             </span>
             <span>
-              <%= project.user.name %>
+              por <%= project.user.name %>
             </span>
             <p>
               <%= truncate(project.description, length: 25) %>
@@ -29,8 +29,8 @@
             </p>
           </div>
           <div class="card-action">
-            <%= link_to 'Delete', url_for(action: :destroy, id: project.id),method: :delete, data: {confirm: "Are you sure?"} %>
-            <%= link_to 'Editar', edit_project_path(project.id) %>
+            <%= link_to 'Deletar', url_for(action: :destroy, id: project.id), method: :delete, data: {confirm: "Você tem certeza?"}, class: "btn red lighten-2 btn-small" %>
+            <%= link_to 'Editar', edit_project_path(project.id), class: "btn blue btn-small" %>
           </div>
         </div>
       </div>

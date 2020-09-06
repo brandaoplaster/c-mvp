@@ -4,9 +4,6 @@
       <h2>
         <%= @project.title %>
       </h2>
-      <h6>
-        <%= @project.user.name %>
-      </h6>
     </div>
   </div>
 
@@ -18,6 +15,9 @@
     <div class="col s12 m6">
       <div class="card">
         <div class="card-content">
+          <span class="">
+            Por <%= @project.user.name %>
+          </span>
           <p>
             valor arrecadado até o momento R$ 
             <%= total_amount_collected(@project.supporters) %>
@@ -31,7 +31,7 @@
           </p>
         </div>
         <div class="card-action center">
-          <a href="/" class="btn">Voltar</a>
+          <a href="/" class="green btn">Voltar</a>
         </div>
       </div>
 
@@ -40,7 +40,7 @@
           <div class="row">
             <%= form_for(Supporter.new) do |f| %>
               <div class="input-field col s12">
-                <%= f.text_field :donated_amount, autofocus: true %>
+                <%= f.text_field :donated_amount, class: "donated_amount" %>
                 <%= f.label :donated_amount %>
               </div>
               <%= f.hidden_field :project_id, value: @project.id %>
