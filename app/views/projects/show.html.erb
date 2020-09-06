@@ -39,7 +39,7 @@
 
       <div class="card">
         <div class="card-content">
-          <% if check_closing_date(@project.end_date) %>
+          <% if check_closing_date(@project.end_date) && current_user.id != @project.user.id %>
             <div class="row">
               <%= form_for(Supporter.new) do |f| %>
                 <div class="input-field col s12">
@@ -56,7 +56,7 @@
           <% else %>
             <div class="row">
               <p class="flow-text center-align">
-                Este projeto alcanço a data limite
+                <%= total_amount_collected(@project.supporters) %>
               </p>
             </div>
           <% end %>

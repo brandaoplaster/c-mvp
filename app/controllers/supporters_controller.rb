@@ -5,9 +5,9 @@ class SupportersController < ApplicationController
 
     if @supporter.save
       flash[:notice] = "ok!"
-      redirect_to projects_path
+      redirect_to pages_path
     else
-      render :create
+      flash[:notice] = "ok!"
     end
   end
 
