@@ -19,7 +19,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - '.:/catarsinho'
+      - '.:/help-me'
       - 'box:/box'
     stdin_open: true
     tty: true
